@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nasrat Abid — Meta Ads Report · May 13 – Jun 11, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#09090f;--surface:#0f1018;--card:#141520;
+  --border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:#555870;
+  --blue:#4a90e2;--green:#4ade80;--gold:#f5c842;--orange:#ff7e47;
+  --red:#f87171;--purple:#a78bfa;--teal:#4ecdc4;--pink:#f472b6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;
+  background:radial-gradient(ellipse 60% 40% at 10% 10%,rgba(74,144,226,0.06) 0%,transparent 60%),
+             radial-gradient(ellipse 50% 40% at 90% 85%,rgba(167,139,250,0.05) 0%,transparent 60%);
+  pointer-events:none;z-index:0}
+
+@media print{
+  body{background:#fff;color:#000}
+  .no-print{display:none!important}
+  .card{background:#f8f9ff!important;border:1px solid #ddd!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#1877f2,#0c4aad 60%,#0a2f7a);
+  padding:2rem 2.5rem;position:relative;z-index:1;overflow:hidden;
+}
+header::after{content:'LMAR';position:absolute;right:-1rem;bottom:-2rem;
+  font-family:'Syne',sans-serif;font-size:10rem;font-weight:800;
+  color:rgba(255,255,255,0.04);line-height:1;pointer-events:none}
+.hdr-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem}
+.hdr-brand{display:flex;align-items:center;gap:.75rem}
+.hdr-icon{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.18);
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.hdr-name{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:#fff}
+.hdr-sub{font-size:.7rem;color:rgba(255,255,255,.6);font-family:'Space Mono';letter-spacing:.07em}
+.hdr-right{text-align:right}
+.hdr-title{font-family:'Syne',sans-serif;font-size:1.7rem;font-weight:800;color:#fff;line-height:1.1}
+.hdr-period{font-size:.78rem;color:rgba(255,255,255,.6);font-family:'Space Mono';margin-top:.3rem}
+.hdr-account{font-size:.68rem;color:rgba(255,255,255,.4);font-family:'Space Mono';margin-top:.2rem}
+
+/* MAIN */
+main{position:relative;z-index:1;padding:1.5rem 2rem 3rem;max-width:1400px;margin:0 auto}
+
+/* UTIL */
+.sec-lbl{font-size:.62rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);font-family:'Space Mono';margin-bottom:.4rem}
+.sec-ttl{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:1.1rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem}
+.row2{display:grid;grid-template-columns:1.5fr 1fr;gap:1rem;margin-bottom:1rem}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1rem}
+.row2b{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+
+/* KPI */
+.kpi-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.9rem;margin-bottom:1.1rem}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:11px;
+  padding:1rem 1.1rem;position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+.kpi:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.15)}
+.kpi::after{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.kpi.c1::after{background:var(--blue)}.kpi.c2::after{background:var(--green)}
+.kpi.c3::after{background:var(--gold)}.kpi.c4::after{background:var(--purple)}
+.kpi.c5::after{background:var(--teal)}.kpi.c6::after{background:var(--orange)}
+.kpi-lbl{font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);
+  font-family:'Space Mono';margin-bottom:.4rem}
+.kpi-val{font-family:'Syne',sans-serif;font-size:1.55rem;font-weight:800;line-height:1}
+.kpi-sub{font-size:.65rem;color:var(--muted);margin-top:.25rem}
+
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:.3rem;padding:.18rem .6rem;
+  border-radius:20px;font-size:.62rem;font-family:'Space Mono';font-weight:700;
+  text-transform:uppercase;letter-spacing:.04em}
+.b-active{background:rgba(74,222,128,.12);color:var(--green);border:1px solid rgba(74,222,128,.25)}
+.b-inactive{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid rgba(255,255,255,.1)}
+.b-archived{background:rgba(248,113,113,.1);color:var(--red);border:1px solid rgba(248,113,113,.2)}
+.b-pending{background:rgba(245,200,66,.12);color:var(--gold);border:1px solid rgba(245,200,66,.25)}
+.bdot{width:5px;height:5px;border-radius:50%}
+.b-active .bdot{background:var(--green);animation:pulse 2s infinite}
+.b-inactive .bdot{background:var(--muted)}
+.b-archived .bdot{background:var(--red)}
+.b-pending .bdot{background:var(--gold)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* TABLE */
+.tbl{width:100%;border-collapse:collapse;font-size:.76rem}
+.tbl th{font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);
+  font-family:'Space Mono';padding:.4rem .65rem;text-align:right;
+  border-bottom:1px solid var(--border);font-weight:400;white-space:nowrap}
+.tbl th:first-child{text-align:left}
+.tbl td{padding:.5rem .65rem;border-bottom:1px solid rgba(255,255,255,.03);
+  text-align:right;vertical-align:middle}
+.tbl td:first-child{text-align:left}
+.tbl tr:hover td{background:rgba(255,255,255,.02)}
+.tbl .tot td{font-weight:700;border-top:1px solid rgba(255,255,255,.12);
+  border-bottom:none;font-family:'Space Mono';font-size:.7rem}
+.cn{font-weight:500;color:var(--text);max-width:200px;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap;font-size:.75rem}
+.nm{font-family:'Space Mono';font-size:.7rem;color:var(--text)}
+.nm.g{color:var(--green)}.nm.b{color:var(--blue)}.nm.gold{color:var(--gold)}
+.nm.r{color:var(--red)}.nm.p{color:var(--purple)}
+
+/* HBAR */
+.hb-list{display:flex;flex-direction:column;gap:.65rem}
+.hb-item{display:flex;align-items:center;gap:.65rem}
+.hb-lbl{font-size:.7rem;color:var(--muted);width:140px;flex-shrink:0;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hb-track{flex:1;height:7px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}
+.hb-fill{height:100%;border-radius:4px;animation:growW .8s ease both}
+@keyframes growW{from{width:0}}
+.hb-val{font-family:'Space Mono';font-size:.67rem;width:65px;text-align:right;flex-shrink:0}
+
+/* DONUT */
+.donut-wrap{display:flex;align-items:center;gap:1.4rem}
+.leg-list{display:flex;flex-direction:column;gap:.55rem;flex:1}
+.leg-item{display:flex;align-items:center;justify-content:space-between;font-size:.76rem}
+.leg-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+.leg-name{flex:1;margin-left:.5rem;color:var(--muted)}
+.leg-val{font-family:'Space Mono';font-size:.7rem;font-weight:700}
+
+/* OBJECTIVE CARDS */
+.obj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+.obj-card{background:rgba(255,255,255,.03);border:1px solid var(--border);
+  border-radius:9px;padding:1.1rem;text-align:center;transition:background .2s}
+.obj-card:hover{background:rgba(255,255,255,.06)}
+.obj-icon{font-size:1.5rem;margin-bottom:.5rem}
+.obj-name{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--muted);font-family:'Space Mono';margin-bottom:.35rem}
+.obj-val{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800}
+.obj-sub{font-size:.65rem;color:var(--muted);margin-top:.2rem}
+
+/* INSIGHT */
+.ins-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.ins{padding:.9rem 1rem;border-radius:9px;border:1px solid transparent}
+.ins-ttl{font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
+.ins-desc{font-size:.77rem;line-height:1.6}
+
+/* REPORT SECTION */
+.report-section{background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.75rem 2rem;margin-bottom:1rem}
+.report-h1{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;
+  color:var(--text);margin-bottom:.4rem}
+.report-sub{font-size:.78rem;color:var(--muted);margin-bottom:1.5rem;font-family:'Space Mono'}
+.report-h2{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;
+  color:var(--text);margin:1.4rem 0 .6rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--border)}
+.report-p{font-size:.85rem;line-height:1.75;color:rgba(232,234,240,.75);margin-bottom:.75rem}
+.report-ul{padding-left:1.2rem;margin-bottom:.75rem}
+.report-ul li{font-size:.84rem;line-height:1.75;color:rgba(232,234,240,.75);margin-bottom:.3rem}
+.report-ul li strong{color:var(--text)}
+.highlight-box{border-radius:9px;padding:.9rem 1.1rem;margin:.75rem 0;
+  border:1px solid transparent;font-size:.83rem;line-height:1.65}
+.eff-row{display:flex;align-items:center;justify-content:space-between;
+  padding:.45rem 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.78rem}
+.eff-row:last-child{border-bottom:none}
+.eff-name{color:var(--muted);font-size:.71rem;max-width:200px;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.eff-val{font-family:'Space Mono';font-size:.71rem}
+
+/* PRINT BTN */
+.print-btn{display:inline-flex;align-items:center;gap:.4rem;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  color:var(--text);padding:.5rem 1.1rem;border-radius:7px;font-size:.74rem;
+  font-family:'Space Mono';cursor:pointer;transition:background .2s;text-decoration:none}
+.print-btn:hover{background:rgba(255,255,255,.14)}
+
+/* FOOTER */
+.rpt-footer{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.2rem 1.5rem;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:1rem;margin-top:1rem}
+
+@media(max-width:1024px){.kpi-grid{grid-template-columns:repeat(3,1fr)}.row2{grid-template-columns:1fr}}
+@media(max-width:768px){.kpi-grid{grid-template-columns:1fr 1fr}.row3,.row2b{grid-template-columns:1fr}.obj-grid{grid-template-columns:1fr 1fr}.ins-grid{grid-template-columns:1fr}main{padding:1rem}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="hdr-top">
+    <div class="hdr-brand">
+      <div class="hdr-icon">📊</div>
+      <div>
+        <div class="hdr-name">Nasrat Abid</div>
+        <div class="hdr-sub">Data Analytics &amp; Meta Ads Specialist · LMAR Marketing</div>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="hdr-title">Meta Ads Campaign Report</div>
+      <div class="hdr-period">📅 May 13, 2026 — June 11, 2026 &nbsp;·&nbsp; 30 Days</div>
+      <div class="hdr-account">27 Campaigns · Account N. Abid · LMAR Real Estate Peshawar</div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- TOP BAR -->
+<div style="margin:1.2rem 0 .6rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem">
+  <div>
+    <div class="sec-lbl">Performance Overview</div>
+    <div class="sec-ttl" style="margin-bottom:0">Key Metrics · May 13 – Jun 11, 2026</div>
+  </div>
+  <a class="print-btn no-print" onclick="window.print()">🖨️ Save as PDF</a>
+</div>
+
+<!-- KPI ROW -->
+<div class="kpi-grid">
+  <div class="kpi c1">
+    <div class="kpi-lbl">Total Spend</div>
+    <div class="kpi-val">₨49.2K</div>
+    <div class="kpi-sub">PKR 49,174.54</div>
+  </div>
+  <div class="kpi c2">
+    <div class="kpi-lbl">Total Results</div>
+    <div class="kpi-val">1.80M</div>
+    <div class="kpi-sub">1,803,429 actions</div>
+  </div>
+  <div class="kpi c3">
+    <div class="kpi-lbl">Impressions</div>
+    <div class="kpi-val">2.45M</div>
+    <div class="kpi-sub">2,447,496 total</div>
+  </div>
+  <div class="kpi c4">
+    <div class="kpi-lbl">Total Reach</div>
+    <div class="kpi-val">1.99M</div>
+    <div class="kpi-sub">1,995,867 accounts</div>
+  </div>
+  <div class="kpi c5">
+    <div class="kpi-lbl">Messaging Contacts</div>
+    <div class="kpi-val">172</div>
+    <div class="kpi-sub">151 new contacts</div>
+  </div>
+  <div class="kpi c6">
+    <div class="kpi-lbl">Campaigns</div>
+    <div class="kpi-val">27</div>
+    <div class="kpi-sub">2 active · 20 inactive · 4 archived · 1 pending</div>
+  </div>
+</div>
+
+<!-- OBJECTIVE BREAKDOWN -->
+<div class="obj-grid" style="margin-bottom:1rem">
+  <div class="obj-card">
+    <div class="obj-icon">👍</div>
+    <div class="obj-name">Post Engagement</div>
+    <div class="obj-val" style="color:var(--blue)">183,123</div>
+    <div class="obj-sub">8 campaigns · ₨15,075 spend</div>
+  </div>
+  <div class="obj-card">
+    <div class="obj-icon">📡</div>
+    <div class="obj-name">Reach / Awareness</div>
+    <div class="obj-val" style="color:var(--green)">1,620,182</div>
+    <div class="obj-sub">12 campaigns · ₨25,829 spend</div>
+  </div>
+  <div class="obj-card">
+    <div class="obj-icon">🎯</div>
+    <div class="obj-name">Lead Generation</div>
+    <div class="obj-val" style="color:var(--gold)">124</div>
+    <div class="obj-sub">7 campaigns · ₨8,271 spend</div>
+  </div>
+</div>
+
+<!-- ROW 1: Full Table + Status Donut -->
+<div class="row2">
+
+  <!-- CAMPAIGN TABLE -->
+  <div class="card">
+    <div class="sec-lbl">All 27 Campaigns</div>
+    <div class="sec-ttl">Full Campaign Performance Breakdown</div>
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Campaign</th>
+          <th>Status</th>
+          <th>Objective</th>
+          <th>Results</th>
+          <th>CPR (₨)</th>
+          <th>Spend (₨)</th>
+          <th>Impressions</th>
+          <th>Reach</th>
+          <th>Msg</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><div class="cn">Eng. Campaign Faisal</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--blue)">Engagement</span></td><td><span class="nm g">32,221</span></td><td><span class="nm gold">0.0857</span></td><td><span class="nm">2,761</span></td><td><span class="nm b">89,205</span></td><td><span class="nm">82,745</span></td><td><span class="nm">8</span></td></tr>
+        <tr><td><div class="cn">Faisal Town 2</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--blue)">Engagement</span></td><td><span class="nm g">50,289</span></td><td><span class="nm gold">0.0743</span></td><td><span class="nm">3,736</span></td><td><span class="nm b">99,941</span></td><td><span class="nm">90,427</span></td><td><span class="nm">6</span></td></tr>
+        <tr><td><div class="cn">Faisal Town 2 (v2)</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--blue)">Engagement</span></td><td><span class="nm">16,933</span></td><td><span class="nm gold">0.1487</span></td><td><span class="nm">2,517</span></td><td><span class="nm b">51,379</span></td><td><span class="nm">42,218</span></td><td><span class="nm">2</span></td></tr>
+        <tr><td><div class="cn">Leads Campaign Faisal 2</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--gold)">Messaging</span></td><td><span class="nm">110</span></td><td><span class="nm r">46.37</span></td><td><span class="nm">5,101</span></td><td><span class="nm b">25,945</span></td><td><span class="nm">16,312</span></td><td><span class="nm g">127</span></td></tr>
+        <tr><td><div class="cn">Awareness Campaign F/T2</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--green)">Reach</span></td><td><span class="nm g">134,447</span></td><td><span class="nm">19.32</span></td><td><span class="nm">2,597</span></td><td><span class="nm b">169,031</span></td><td><span class="nm">134,447</span></td><td><span class="nm">1</span></td></tr>
+        <tr><td><div class="cn">Engagement F/T 2 (Msg)</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--gold)">Messaging</span></td><td><span class="nm r">1</span></td><td><span class="nm r">292.87</span></td><td><span class="nm">293</span></td><td><span class="nm b">1,268</span></td><td><span class="nm">1,134</span></td><td><span class="nm">2</span></td></tr>
+        <tr><td><div class="cn">Awareness Campaign #1</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--green)">Reach</span></td><td><span class="nm g">70,712</span></td><td><span class="nm">17.43</span></td><td><span class="nm">1,232</span></td><td><span class="nm b">79,808</span></td><td><span class="nm">70,712</span></td><td><span class="nm">—</span></td></tr>
+        <tr><td><div class="cn">Eng. Campaign F|T 2</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--blue)">Engagement</span></td><td><span class="nm">13,976</span></td><td><span class="nm gold">0.1078</span></td><td><span class="nm">1,507</span></td><td><span class="nm b">34,469</span></td><td><span class="nm">28,495</span></td><td><span class="nm">4</span></td></tr>
+        <tr><td><div class="cn">Leads Campaign (small)</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--gold)">Leads</span></td><td><span class="nm r">1</span></td><td><span class="nm r">14.05</span></td><td><span class="nm">14</span></td><td><span class="nm b">37</span></td><td><span class="nm">37</span></td><td><span class="nm">1</span></td></tr>
+        <tr><td><div class="cn">Awareness Campaign #2</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--green)">Reach</span></td><td><span class="nm g">207,631</span></td><td><span class="nm">19.43</span></td><td><span class="nm">4,033</span></td><td><span class="nm b">238,259</span></td><td><span class="nm">207,631</span></td><td><span class="nm">1</span></td></tr>
+        <tr><td><div class="cn">Awareness Campaign #3</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--green)">Reach</span></td><td><span class="nm g">118,990</span></td><td><span class="nm">17.77</span></td><td><span class="nm">2,114</span></td><td><span class="nm b">131,944</span></td><td><span class="nm">118,990</span></td><td><span class="nm">1</span></td></tr>
+        <tr><td><div class="cn">Leads Campaign #2</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--gold)">Leads</span></td><td><span class="nm r">8</span></td><td><span class="nm r">236.26</span></td><td><span class="nm">1,890</span></td><td><span class="nm b">7,955</span></td><td><span class="nm">6,925</span></td><td><span class="nm">—</span></td></tr>
+        <tr><td><div class="cn">Awareness (Archived #1)</div></td><td><span class="badge b-archived"><span class="bdot"></span>Archived</span></td><td><span style="font-size:.65rem;color:var(--green)">Reach</span></td><td><span class="nm">15,343</span></td><td><span class="nm gold">12.94</span></td><td><span class="nm">199</span></td><td><span class="nm b">15,528</span></td><td><span class="nm">15,343</span></td><td><span class="nm">—</span></td></tr>
+        <tr><td><div class="cn">Awareness Campaign #4 ⭐</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--green)">Reach</span></td><td><span class="nm g">343,922</span></td><td><span class="nm">20.71</span></td><td><span class="nm">7,124</span></td><td><span class="nm b">517,772</span></td><td><span class="nm">343,922</span></td><td><span class="nm">5</span></td></tr>
+        <tr><td><div class="cn">Awareness (Archived #2)</div></td><td><span class="badge b-archived"><span class="bdot"></span>Archived</span></td><td><span style="font-size:.65rem;color:var(--green)">Reach</span></td><td><span class="nm g">90,416</span></td><td><span class="nm gold">6.62</span></td><td><span class="nm">599</span></td><td><span class="nm b">109,166</span></td><td><span class="nm">90,416</span></td><td><span class="nm">—</span></td></tr>
+        <tr><td><div class="cn">Awareness Campaign #5</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--green)">Reach</span></td><td><span class="nm g">156,999</span></td><td><span class="nm">17.74</span></td><td><span class="nm">2,786</span></td><td><span class="nm b">206,257</span></td><td><span class="nm">156,999</span></td><td><span class="nm">3</span></td></tr>
+        <tr><td><div class="cn">Awareness Campaign #6</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--green)">Reach</span></td><td><span class="nm g">162,268</span></td><td><span class="nm gold">8.70</span></td><td><span class="nm">1,412</span></td><td><span class="nm b">186,120</span></td><td><span class="nm">162,268</span></td><td><span class="nm">—</span></td></tr>
+        <tr><td><div class="cn">Awareness Campaign #7</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--green)">Reach</span></td><td><span class="nm g">204,488</span></td><td><span class="nm">14.41</span></td><td><span class="nm">2,947</span></td><td><span class="nm b">229,058</span></td><td><span class="nm">204,488</span></td><td><span class="nm">2</span></td></tr>
+        <tr><td><div class="cn">Awareness Campaign #8</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--green)">Reach</span></td><td><span class="nm">27,498</span></td><td><span class="nm gold">12.45</span></td><td><span class="nm">342</span></td><td><span class="nm b">28,405</span></td><td><span class="nm">27,498</span></td><td><span class="nm">—</span></td></tr>
+        <tr><td><div class="cn">Eng. Campaign #5</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--blue)">Engagement</span></td><td><span class="nm">17,629</span></td><td><span class="nm gold">0.0834</span></td><td><span class="nm">1,471</span></td><td><span class="nm b">33,467</span></td><td><span class="nm">26,213</span></td><td><span class="nm">—</span></td></tr>
+        <tr><td><div class="cn">Eng. Campaign #6</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--blue)">Engagement</span></td><td><span class="nm g">28,507</span></td><td><span class="nm gold">0.0553</span></td><td><span class="nm">1,576</span></td><td><span class="nm b">43,910</span></td><td><span class="nm">39,892</span></td><td><span class="nm">—</span></td></tr>
+        <tr><td><div class="cn">Awareness (Archived #3)</div></td><td><span class="badge b-archived"><span class="bdot"></span>Archived</span></td><td><span style="font-size:.65rem;color:var(--green)">Reach</span></td><td><span class="nm g">87,468</span></td><td><span class="nm gold">5.07</span></td><td><span class="nm">442</span></td><td><span class="nm b">103,027</span></td><td><span class="nm">87,468</span></td><td><span class="nm">2</span></td></tr>
+        <tr><td><div class="cn">Leads Faisal Hills</div></td><td><span class="badge b-pending"><span class="bdot"></span>Pending</span></td><td><span style="font-size:.65rem;color:var(--gold)">Leads</span></td><td><span class="nm r">1</span></td><td><span class="nm r">245.49</span></td><td><span class="nm">245</span></td><td><span class="nm b">1,366</span></td><td><span class="nm">1,357</span></td><td><span class="nm">2</span></td></tr>
+        <tr><td><div class="cn">Eng. Campaign #7 🟢</div></td><td><span class="badge b-active"><span class="bdot"></span>Active</span></td><td><span style="font-size:.65rem;color:var(--blue)">Engagement</span></td><td><span class="nm g">8,918</span></td><td><span class="nm gold">0.0828</span></td><td><span class="nm">739</span></td><td><span class="nm b">17,588</span></td><td><span class="nm">15,245</span></td><td><span class="nm">2</span></td></tr>
+        <tr><td><div class="cn">Eng. Campaign #8 🟢</div></td><td><span class="badge b-active"><span class="bdot"></span>Active</span></td><td><span style="font-size:.65rem;color:var(--blue)">Engagement</span></td><td><span class="nm g">14,650</span></td><td><span class="nm gold">0.0524</span></td><td><span class="nm">768</span></td><td><span class="nm b">22,716</span></td><td><span class="nm">20,866</span></td><td><span class="nm">1</span></td></tr>
+        <tr><td><div class="cn">Leads Faisal (Archived)</div></td><td><span class="badge b-archived"><span class="bdot"></span>Archived</span></td><td><span style="font-size:.65rem;color:var(--gold)">Leads</span></td><td><span class="nm r">2</span></td><td><span class="nm r">202.95</span></td><td><span class="nm">406</span></td><td><span class="nm b">1,353</span></td><td><span class="nm">1,297</span></td><td><span class="nm">—</span></td></tr>
+        <tr><td><div class="cn">Leads Campaign #3</div></td><td><span class="badge b-inactive"><span class="bdot"></span>Inactive</span></td><td><span style="font-size:.65rem;color:var(--gold)">Leads</span></td><td><span class="nm r">1</span></td><td><span class="nm r">321.84</span></td><td><span class="nm">322</span></td><td><span class="nm b">2,522</span></td><td><span class="nm">2,522</span></td><td><span class="nm">2</span></td></tr>
+        <tr class="tot">
+          <td>TOTAL (27 campaigns)</td><td></td><td></td>
+          <td>1,803,429</td><td>—</td><td>49,175</td>
+          <td>2,447,496</td><td>1,995,867</td><td>172</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div style="display:flex;flex-direction:column;gap:1rem">
+
+    <!-- STATUS DONUT -->
+    <div class="card">
+      <div class="sec-lbl">Campaign Status</div>
+      <div class="sec-ttl">Delivery Overview</div>
+      <div class="donut-wrap">
+        <svg viewBox="0 0 120 120" width="108" height="108" style="flex-shrink:0">
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#1e2030" stroke-width="18"/>
+          <!-- Active 2/27 = 7.4% -->
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#4ade80" stroke-width="18"
+            stroke-dasharray="20 277" stroke-dashoffset="69" transform="rotate(-90 60 60)"/>
+          <!-- Inactive 20/27 = 74.1% -->
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#334155" stroke-width="18"
+            stroke-dasharray="205 277" stroke-dashoffset="49" transform="rotate(-90 60 60)"/>
+          <!-- Archived 4/27 = 14.8% -->
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#f87171" stroke-width="18"
+            stroke-dasharray="41 277" stroke-dashoffset="-156" transform="rotate(-90 60 60)"/>
+          <!-- Pending 1/27 = 3.7% -->
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#f5c842" stroke-width="18"
+            stroke-dasharray="10 277" stroke-dashoffset="-197" transform="rotate(-90 60 60)"/>
+          <text x="60" y="55" text-anchor="middle" font-family="Syne" font-size="13" font-weight="800" fill="#e8eaf0">27</text>
+          <text x="60" y="68" text-anchor="middle" font-family="Space Grotesk" font-size="7" fill="#555870">campaigns</text>
+        </svg>
+        <div class="leg-list">
+          <div class="leg-item"><div class="leg-dot" style="background:var(--green)"></div><span class="leg-name">Active</span><span class="leg-val" style="color:var(--green)">2</span></div>
+          <div class="leg-item"><div class="leg-dot" style="background:#334155"></div><span class="leg-name">Inactive</span><span class="leg-val">20</span></div>
+          <div class="leg-item"><div class="leg-dot" style="background:var(--red)"></div><span class="leg-name">Archived</span><span class="leg-val" style="color:var(--red)">4</span></div>
+          <div class="leg-item"><div class="leg-dot" style="background:var(--gold)"></div><span class="leg-name">Pending</span><span class="leg-val" style="color:var(--gold)">1</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPEND BY OBJECTIVE DONUT -->
+    <div class="card">
+      <div class="sec-lbl">Budget Allocation</div>
+      <div class="sec-ttl">Spend by Objective</div>
+      <div class="donut-wrap">
+        <svg viewBox="0 0 120 120" width="108" height="108" style="flex-shrink:0">
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#1e2030" stroke-width="18"/>
+          <!-- Awareness 52.5% -->
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#4ade80" stroke-width="18"
+            stroke-dasharray="145 277" stroke-dashoffset="69" transform="rotate(-90 60 60)"/>
+          <!-- Engagement 30.7% -->
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#4a90e2" stroke-width="18"
+            stroke-dasharray="85 277" stroke-dashoffset="-76" transform="rotate(-90 60 60)"/>
+          <!-- Leads 16.8% -->
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#f5c842" stroke-width="18"
+            stroke-dasharray="46 277" stroke-dashoffset="-161" transform="rotate(-90 60 60)"/>
+          <text x="60" y="55" text-anchor="middle" font-family="Syne" font-size="10" font-weight="800" fill="#e8eaf0">₨49.2K</text>
+          <text x="60" y="68" text-anchor="middle" font-family="Space Grotesk" font-size="7" fill="#555870">total</text>
+        </svg>
+        <div class="leg-list">
+          <div class="leg-item"><div class="leg-dot" style="background:var(--green)"></div><span class="leg-name">Awareness</span><span class="leg-val" style="color:var(--green)">52.5%</span></div>
+          <div class="leg-item"><div class="leg-dot" style="background:var(--blue)"></div><span class="leg-name">Engagement</span><span class="leg-val" style="color:var(--blue)">30.7%</span></div>
+          <div class="leg-item"><div class="leg-dot" style="background:var(--gold)"></div><span class="leg-name">Lead Gen</span><span class="leg-val" style="color:var(--gold)">16.8%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MESSAGING CONTACTS -->
+    <div class="card">
+      <div class="sec-lbl">Lead Generation</div>
+      <div class="sec-ttl">Messaging Contacts</div>
+      <div style="display:flex;gap:.75rem;margin-bottom:.8rem">
+        <div style="flex:1;background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.18);border-radius:8px;padding:.9rem;text-align:center">
+          <div style="font-family:'Syne',sans-serif;font-size:1.7rem;font-weight:800;color:var(--green)">151</div>
+          <div style="font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-family:'Space Mono'">New Contacts</div>
+        </div>
+        <div style="flex:1;background:rgba(74,144,226,.07);border:1px solid rgba(74,144,226,.18);border-radius:8px;padding:.9rem;text-align:center">
+          <div style="font-family:'Syne',sans-serif;font-size:1.7rem;font-weight:800;color:var(--blue)">172</div>
+          <div style="font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-family:'Space Mono'">Total Contacts</div>
+        </div>
+      </div>
+      <div class="eff-row"><span class="eff-name">Leads Campaign Faisal 2</span><span class="eff-val" style="color:var(--green)">108 new</span></div>
+      <div class="eff-row"><span class="eff-name">All other campaigns</span><span class="eff-val" style="color:var(--muted)">43 new</span></div>
+      <div class="eff-row"><span class="eff-name">Cost per contact (avg)</span><span class="eff-val" style="color:var(--gold)">₨326 / contact</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 2: Spend Bar + Efficiency Ranking -->
+<div class="row2b">
+
+  <!-- TOP SPEND BAR -->
+  <div class="card">
+    <div class="sec-lbl">Budget Distribution</div>
+    <div class="sec-ttl">Top Campaigns by Amount Spent</div>
+    <div class="hb-list">
+      <div class="hb-item"><div class="hb-lbl">Awareness #4 (343K reach)</div><div class="hb-track"><div class="hb-fill" style="width:100%;background:var(--green)"></div></div><div class="hb-val" style="color:var(--green)">₨7,124</div></div>
+      <div class="hb-item"><div class="hb-lbl">Leads Campaign Faisal 2</div><div class="hb-track"><div class="hb-fill" style="width:72%;background:var(--red)"></div></div><div class="hb-val" style="color:var(--red)">₨5,101</div></div>
+      <div class="hb-item"><div class="hb-lbl">Awareness #2 (207K reach)</div><div class="hb-track"><div class="hb-fill" style="width:57%;background:var(--blue)"></div></div><div class="hb-val" style="color:var(--blue)">₨4,033</div></div>
+      <div class="hb-item"><div class="hb-lbl">Faisal Town 2 (Eng.)</div><div class="hb-track"><div class="hb-fill" style="width:52%;background:var(--purple)"></div></div><div class="hb-val" style="color:var(--purple)">₨3,736</div></div>
+      <div class="hb-item"><div class="hb-lbl">Awareness #7 (204K reach)</div><div class="hb-track"><div class="hb-fill" style="width:41%;background:var(--teal)"></div></div><div class="hb-val" style="color:var(--teal)">₨2,947</div></div>
+      <div class="hb-item"><div class="hb-lbl">Awareness #5 (157K reach)</div><div class="hb-track"><div class="hb-fill" style="width:39%;background:var(--teal)"></div></div><div class="hb-val" style="color:var(--teal)">₨2,786</div></div>
+      <div class="hb-item"><div class="hb-lbl">Eng. Campaign Faisal</div><div class="hb-track"><div class="hb-fill" style="width:39%;background:var(--gold)"></div></div><div class="hb-val" style="color:var(--gold)">₨2,761</div></div>
+      <div class="hb-item"><div class="hb-lbl">Faisal Town 2 (v2)</div><div class="hb-track"><div class="hb-fill" style="width:35%;background:var(--orange)"></div></div><div class="hb-val" style="color:var(--orange)">₨2,517</div></div>
+      <div class="hb-item"><div class="hb-lbl">Awareness #3 (119K reach)</div><div class="hb-track"><div class="hb-fill" style="width:30%;background:var(--muted)"></div></div><div class="hb-val">₨2,114</div></div>
+      <div class="hb-item"><div class="hb-lbl">Awareness F/T2</div><div class="hb-track"><div class="hb-fill" style="width:36%;background:var(--muted)"></div></div><div class="hb-val">₨2,597</div></div>
+    </div>
+  </div>
+
+  <!-- EFFICIENCY RANKING -->
+  <div class="card">
+    <div class="sec-lbl">Cost Per Result Ranking</div>
+    <div class="sec-ttl">Best → Worst Efficiency</div>
+
+    <div style="font-size:.65rem;color:var(--blue);text-transform:uppercase;letter-spacing:.1em;font-family:'Space Mono';margin-bottom:.5rem">⚡ Engagement Campaigns</div>
+    <div class="eff-row"><span class="eff-name">🥇 Eng. #8 (Active)</span><span class="eff-val" style="color:var(--green)">₨0.0524</span></div>
+    <div class="eff-row"><span class="eff-name">🥈 Eng. #6</span><span class="eff-val" style="color:var(--green)">₨0.0553</span></div>
+    <div class="eff-row"><span class="eff-name">🥉 Eng. #5</span><span class="eff-val" style="color:var(--green)">₨0.0834</span></div>
+    <div class="eff-row"><span class="eff-name">Eng. #7 (Active)</span><span class="eff-val" style="color:var(--green)">₨0.0828</span></div>
+    <div class="eff-row"><span class="eff-name">Faisal Town 2</span><span class="eff-val" style="color:var(--green)">₨0.0743</span></div>
+    <div class="eff-row"><span class="eff-name">Eng. Faisal</span><span class="eff-val" style="color:var(--gold)">₨0.0857</span></div>
+    <div class="eff-row"><span class="eff-name">Eng. F|T 2</span><span class="eff-val" style="color:var(--gold)">₨0.1078</span></div>
+    <div class="eff-row"><span class="eff-name">Faisal Town 2 (v2)</span><span class="eff-val" style="color:var(--orange)">₨0.1487</span></div>
+
+    <div style="font-size:.65rem;color:var(--green);text-transform:uppercase;letter-spacing:.1em;font-family:'Space Mono';margin:.8rem 0 .5rem">📡 Awareness / Reach Campaigns</div>
+    <div class="eff-row"><span class="eff-name">🥇 Archived #3</span><span class="eff-val" style="color:var(--green)">₨5.07</span></div>
+    <div class="eff-row"><span class="eff-name">🥈 Archived #2</span><span class="eff-val" style="color:var(--green)">₨6.62</span></div>
+    <div class="eff-row"><span class="eff-name">Awareness #6</span><span class="eff-val" style="color:var(--green)">₨8.70</span></div>
+    <div class="eff-row"><span class="eff-name">Archived #1</span><span class="eff-val" style="color:var(--gold)">₨12.94</span></div>
+    <div class="eff-row"><span class="eff-name">Awareness #8</span><span class="eff-val" style="color:var(--gold)">₨12.45</span></div>
+    <div class="eff-row"><span class="eff-name">Awareness #7</span><span class="eff-val" style="color:var(--orange)">₨14.41</span></div>
+    <div class="eff-row"><span class="eff-name">Awareness #4 (top reach)</span><span class="eff-val" style="color:var(--orange)">₨20.71</span></div>
+
+    <div style="font-size:.65rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;font-family:'Space Mono';margin:.8rem 0 .5rem">⚠️ Lead Campaigns (High CPR)</div>
+    <div class="eff-row"><span class="eff-name">Leads small (1 result)</span><span class="eff-val" style="color:var(--orange)">₨14.05</span></div>
+    <div class="eff-row"><span class="eff-name">Leads Campaign Faisal 2</span><span class="eff-val" style="color:var(--red)">₨46.37</span></div>
+    <div class="eff-row"><span class="eff-name">Leads Faisal (Archived)</span><span class="eff-val" style="color:var(--red)">₨202.95</span></div>
+    <div class="eff-row"><span class="eff-name">Leads Faisal Hills</span><span class="eff-val" style="color:var(--red)">₨245.49</span></div>
+    <div class="eff-row"><span class="eff-name">Leads #2</span><span class="eff-val" style="color:var(--red)">₨236.26</span></div>
+    <div class="eff-row"><span class="eff-name">Leads #3</span><span class="eff-val" style="color:var(--red)">₨321.84</span></div>
+    <div class="eff-row"><span class="eff-name">⚠️ Eng. F/T 2 (Msg)</span><span class="eff-val" style="color:var(--red)">₨292.87</span></div>
+  </div>
+</div>
+
+<!-- INSIGHTS -->
+<div class="row3" style="margin-top:0">
+  <div class="card">
+    <div class="sec-lbl">Key Findings</div>
+    <div class="sec-ttl">Performance Insights</div>
+    <div class="ins-grid">
+      <div class="ins" style="background:rgba(74,222,128,.07);border-color:rgba(74,222,128,.2)">
+        <div class="ins-ttl" style="color:var(--green)">🏆 Top Result</div>
+        <div class="ins-desc" style="color:rgba(232,234,240,.7)">Awareness #4 reached 343,922 people — highest reach of all campaigns at ₨7,124 spend.</div>
+      </div>
+      <div class="ins" style="background:rgba(245,200,66,.07);border-color:rgba(245,200,66,.2)">
+        <div class="ins-ttl" style="color:var(--gold)">⚡ Most Efficient</div>
+        <div class="ins-desc" style="color:rgba(232,234,240,.7)">Eng. #8 (Active) delivers at ₨0.0524 per engagement — cheapest in the entire account.</div>
+      </div>
+      <div class="ins" style="background:rgba(248,113,113,.07);border-color:rgba(248,113,113,.2)">
+        <div class="ins-ttl" style="color:var(--red)">⚠️ Lead CPR Alert</div>
+        <div class="ins-desc" style="color:rgba(232,234,240,.7)">Lead campaigns average ₨180+ CPR. Messaging approach needs audience or creative optimization.</div>
+      </div>
+      <div class="ins" style="background:rgba(74,144,226,.07);border-color:rgba(74,144,226,.2)">
+        <div class="ins-ttl" style="color:var(--blue)">💬 Top Lead Source</div>
+        <div class="ins-desc" style="color:rgba(232,234,240,.7)">Leads Faisal 2 generated 108 of 151 new contacts — 71.5% of all new messaging leads.</div>
+      </div>
+      <div class="ins" style="background:rgba(78,205,196,.07);border-color:rgba(78,205,196,.2)">
+        <div class="ins-ttl" style="color:var(--teal)">📊 Budget Split</div>
+        <div class="ins-desc" style="color:rgba(232,234,240,.7)">52.5% of budget on Awareness, 30.7% Engagement, 16.8% Leads. Awareness is dominant.</div>
+      </div>
+      <div class="ins" style="background:rgba(167,139,250,.07);border-color:rgba(167,139,250,.2)">
+        <div class="ins-ttl" style="color:var(--purple)">💡 Recommendation</div>
+        <div class="ins-desc" style="color:rgba(232,234,240,.7)">Scale active Eng. #7 & #8 with higher budget. Pause high-CPR lead campaigns. Test new creatives for messaging objective.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REACH BAR -->
+  <div class="card">
+    <div class="sec-lbl">Reach Distribution</div>
+    <div class="sec-ttl">Top Campaigns by Reach</div>
+    <div class="hb-list">
+      <div class="hb-item"><div class="hb-lbl">Awareness #4</div><div class="hb-track"><div class="hb-fill" style="width:100%;background:var(--green)"></div></div><div class="hb-val" style="color:var(--green)">343,922</div></div>
+      <div class="hb-item"><div class="hb-lbl">Awareness #2</div><div class="hb-track"><div class="hb-fill" style="width:60%;background:var(--blue)"></div></div><div class="hb-val" style="color:var(--blue)">207,631</div></div>
+      <div class="hb-item"><div class="hb-lbl">Awareness #7</div><div class="hb-track"><div class="hb-fill" style="width:59%;background:var(--purple)"></div></div><div class="hb-val" style="color:var(--purple)">204,488</div></div>
+      <div class="hb-item"><div class="hb-lbl">Awareness #5</div><div class="hb-track"><div class="hb-fill" style="width:46%;background:var(--teal)"></div></div><div class="hb-val" style="color:var(--teal)">156,999</div></div>
+      <div class="hb-item"><div class="hb-lbl">Awareness F/T2</div><div class="hb-track"><div class="hb-fill" style="width:39%;background:var(--gold)"></div></div><div class="hb-val" style="color:var(--gold)">134,447</div></div>
+      <div class="hb-item"><div class="hb-lbl">Awareness #3</div><div class="hb-track"><div class="hb-fill" style="width:35%;background:var(--orange)"></div></div><div class="hb-val" style="color:var(--orange)">118,990</div></div>
+      <div class="hb-item"><div class="hb-lbl">Archived #2</div><div class="hb-track"><div class="hb-fill" style="width:26%;background:var(--muted)"></div></div><div class="hb-val">90,416</div></div>
+      <div class="hb-item"><div class="hb-lbl">Archived #3</div><div class="hb-track"><div class="hb-fill" style="width:25%;background:var(--muted)"></div></div><div class="hb-val">87,468</div></div>
+      <div class="hb-item"><div class="hb-lbl">Faisal Town 2 (Eng.)</div><div class="hb-track"><div class="hb-fill" style="width:26%;background:var(--pink)"></div></div><div class="hb-val" style="color:var(--pink)">90,427</div></div>
+      <div class="hb-item"><div class="hb-lbl">Eng. Faisal</div><div class="hb-track"><div class="hb-fill" style="width:24%;background:var(--pink)"></div></div><div class="hb-val" style="color:var(--pink)">82,745</div></div>
+    </div>
+  </div>
+
+  <!-- COMPARISON vs PREV PERIOD -->
+  <div class="card">
+    <div class="sec-lbl">Period Comparison</div>
+    <div class="sec-ttl">May 13–Jun 11 vs Apr 11–May 10</div>
+    <div style="display:flex;flex-direction:column;gap:.7rem;margin-top:.3rem">
+      <div style="padding:.8rem 1rem;background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.2);border-radius:8px">
+        <div style="font-size:.65rem;color:var(--red);font-family:'Space Mono';text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem">Total Spend</div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--red)">₨49.2K</span>
+          <span style="font-size:.72rem;color:var(--muted)">was ₨95.2K</span>
+        </div>
+        <div style="font-size:.72rem;color:var(--green);margin-top:.2rem">↓ 48.4% less spend</div>
+      </div>
+      <div style="padding:.8rem 1rem;background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.2);border-radius:8px">
+        <div style="font-size:.65rem;color:var(--red);font-family:'Space Mono';text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem">Total Results</div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--red)">1.80M</span>
+          <span style="font-size:.72rem;color:var(--muted)">was 1.23M</span>
+        </div>
+        <div style="font-size:.72rem;color:var(--green);margin-top:.2rem">↑ +46.2% more results</div>
+      </div>
+      <div style="padding:.8rem 1rem;background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.2);border-radius:8px">
+        <div style="font-size:.65rem;color:var(--green);font-family:'Space Mono';text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem">Reach</div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--green)">1.99M</span>
+          <span style="font-size:.72rem;color:var(--muted)">was 2.05M</span>
+        </div>
+        <div style="font-size:.72rem;color:var(--gold);margin-top:.2rem">↓ −2.7% (nearly same)</div>
+      </div>
+      <div style="padding:.8rem 1rem;background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.2);border-radius:8px">
+        <div style="font-size:.65rem;color:var(--green);font-family:'Space Mono';text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem">Campaigns</div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--green)">27</span>
+          <span style="font-size:.72rem;color:var(--muted)">was 17 campaigns</span>
+        </div>
+        <div style="font-size:.72rem;color:var(--green);margin-top:.2rem">↑ +10 more campaigns</div>
+      </div>
+      <div style="padding:.8rem 1rem;background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.2);border-radius:8px">
+        <div style="font-size:.65rem;color:var(--green);font-family:'Space Mono';text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem">Impressions</div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--green)">2.45M</span>
+          <span style="font-size:.72rem;color:var(--muted)">was 2.73M</span>
+        </div>
+        <div style="font-size:.72rem;color:var(--gold);margin-top:.2rem">↓ −10.2% fewer impressions</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ WRITTEN REPORT ═══════════════ -->
+<div class="report-section">
+  <div class="sec-lbl" style="margin-bottom:.5rem">Executive Summary</div>
+  <div class="report-h1">LMAR Marketing Real Estate<br>Meta Ads Performance Report</div>
+  <div class="report-sub">Period: May 13 – June 11, 2026 &nbsp;·&nbsp; Prepared by: Nasrat Abid, Meta Ads Specialist &nbsp;·&nbsp; 27 Campaigns</div>
+
+  <div class="report-h2">1. Overview</div>
+  <div class="report-p">
+    During the 30-day period from May 13 to June 11, 2026, LMAR Marketing Real Estate ran
+    <strong>27 Meta Ads campaigns</strong> across Facebook and Instagram, with a total spend of
+    <strong>₨49,174.54 PKR</strong>. The campaigns collectively generated
+    <strong>1,803,429 results</strong>, reached <strong>1,995,867 unique accounts</strong>,
+    and delivered <strong>2,447,496 impressions</strong>. A total of
+    <strong>172 messaging contacts</strong> were made, with <strong>151 being new contacts</strong>.
+  </div>
+
+  <div class="report-h2">2. Campaign Mix & Budget Allocation</div>
+  <div class="report-p">Campaigns were distributed across three objectives:</div>
+  <ul class="report-ul">
+    <li><strong>Post Engagement (8 campaigns):</strong> ₨15,075 spend — 30.7% of total budget. Generated 183,123 engagement results at an average CPR of ₨0.08–₨0.15.</li>
+    <li><strong>Reach / Awareness (12 campaigns):</strong> ₨25,829 spend — 52.5% of total budget. Generated 1,620,182 reach results. The dominant objective this period.</li>
+    <li><strong>Lead Generation (7 campaigns):</strong> ₨8,271 spend — 16.8% of total budget. Generated only 124 lead results but produced 151 new messaging contacts.</li>
+  </ul>
+  <div class="report-p">Of the 27 campaigns, only <strong>2 were active</strong> at report time, 20 were inactive, 4 archived, and 1 pending review — indicating most budget was spent earlier in the period.</div>
+
+  <div class="report-h2">3. Top Performing Campaigns</div>
+  <div class="highlight-box" style="background:rgba(74,222,128,.07);border-color:rgba(74,222,128,.2)">
+    <strong style="color:var(--green)">🏆 Highest Reach:</strong>
+    <span style="color:rgba(232,234,240,.75)"> New Awareness Campaign #4 — 343,922 people reached at ₨7,124 spend. Highest single-campaign reach of the entire period.</span>
+  </div>
+  <div class="highlight-box" style="background:rgba(245,200,66,.07);border-color:rgba(245,200,66,.2)">
+    <strong style="color:var(--gold)">⚡ Most Efficient Engagement:</strong>
+    <span style="color:rgba(232,234,240,.75)"> New post engagement campaign #8 (Active) — ₨0.0524 per engagement result. Best CPR in the account.</span>
+  </div>
+  <div class="highlight-box" style="background:rgba(74,144,226,.07);border-color:rgba(74,144,226,.2)">
+    <strong style="color:var(--blue)">💬 Top Lead Generator:</strong>
+    <span style="color:rgba(232,234,240,.75)"> New Leads Campaign Faisal 2 — 108 new messaging contacts from ₨5,101 spend. Generated 71.5% of all new leads.</span>
+  </div>
+  <div class="highlight-box" style="background:rgba(78,205,196,.07);border-color:rgba(78,205,196,.2)">
+    <strong style="color:var(--teal)">💰 Best Reach Efficiency (Archived):</strong>
+    <span style="color:rgba(232,234,240,.75)"> Archived Awareness #3 achieved ₨5.07 per reach result — the lowest CPR among all awareness campaigns.</span>
+  </div>
+
+  <div class="report-h2">4. Period-over-Period Comparison (vs Apr 11 – May 10)</div>
+  <ul class="report-ul">
+    <li><strong>Spend decreased by 48.4%</strong> — from ₨95,178 to ₨49,175. Significantly lower budget this period.</li>
+    <li><strong>Results increased by 46.2%</strong> — from 1,233,662 to 1,803,429 despite lower spend. Strong efficiency improvement.</li>
+    <li><strong>Reach held steady</strong> — 1.99M vs 2.05M (−2.7%). Nearly same reach at half the cost.</li>
+    <li><strong>Campaigns increased</strong> — from 17 to 27 campaigns (+10). More diversified campaign structure.</li>
+    <li><strong>Impressions slightly down</strong> — 2.45M vs 2.73M (−10.2%). Fewer impressions but more results suggests better targeting.</li>
+  </ul>
+  <div class="report-p">Overall, this period demonstrates <strong>significantly better cost efficiency</strong> — achieving more results with nearly half the budget compared to the previous period.</div>
+
+  <div class="report-h2">5. Areas of Concern</div>
+  <ul class="report-ul">
+    <li><strong>Lead campaign CPR is very high:</strong> Most lead campaigns spent ₨200–₨321 per result with only 1–8 conversions. New Engagement Campaign F/T 2 spent ₨292.87 for just 1 messaging conversation.</li>
+    <li><strong>Only 2 active campaigns:</strong> The majority of campaigns stopped delivering mid-period. Budget continuity should be reviewed to avoid gaps in reach.</li>
+    <li><strong>Pending review campaign:</strong> New Leads Campaign Faisal Hills is in pending review — creative or targeting may need revision to pass Meta's approval.</li>
+    <li><strong>Awareness #4 CPR is highest:</strong> While it generated the most reach (343K), the ₨20.71 CPR is the highest among awareness campaigns. Budget reallocation to lower-CPR awareness campaigns could improve efficiency.</li>
+  </ul>
+
+  <div class="report-h2">6. Recommendations</div>
+  <ul class="report-ul">
+    <li><strong>Scale active engagement campaigns:</strong> Campaigns #7 and #8 (currently active) are performing at ₨0.052–₨0.083 CPR. Increase daily budget on these immediately.</li>
+    <li><strong>Reactivate top engagement campaigns:</strong> Faisal Town 2 (₨0.074 CPR) and Eng. #6 (₨0.055 CPR) should be reactivated — they proved high efficiency when active.</li>
+    <li><strong>Optimize lead campaigns:</strong> Replace broad messaging campaigns with more targeted lead forms. Test lookalike audiences from existing messaging contacts for better conversion rates.</li>
+    <li><strong>Maintain awareness budget on low-CPR campaigns:</strong> Archived campaigns #2 (₨6.62) and #3 (₨5.07) showed the best reach efficiency — rebuild similar structures as active campaigns.</li>
+    <li><strong>Review Leads Faisal Hills:</strong> Resolve the pending review issue and relaunch with updated creative to capture Faisal Hills leads.</li>
+    <li><strong>Budget continuity:</strong> Avoid allowing all campaigns to go inactive simultaneously. Keep at least 4–5 campaigns running at all times for consistent brand presence.</li>
+  </ul>
+
+  <div class="report-h2">7. Summary Scorecard</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-top:.5rem">
+    <div style="background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.2);border-radius:8px;padding:1rem;text-align:center">
+      <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--green)">A</div>
+      <div style="font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-family:'Space Mono'">Engagement CPR</div>
+    </div>
+    <div style="background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.2);border-radius:8px;padding:1rem;text-align:center">
+      <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--green)">A</div>
+      <div style="font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-family:'Space Mono'">Reach Volume</div>
+    </div>
+    <div style="background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.2);border-radius:8px;padding:1rem;text-align:center">
+      <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--red)">C</div>
+      <div style="font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-family:'Space Mono'">Lead Gen CPR</div>
+    </div>
+    <div style="background:rgba(245,200,66,.07);border:1px solid rgba(245,200,66,.2);border-radius:8px;padding:1rem;text-align:center">
+      <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--gold)">B+</div>
+      <div style="font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-family:'Space Mono'">Overall Efficiency</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="rpt-footer">
+  <div>
+    <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem">Nasrat Abid · Data Analytics &amp; Meta Ads Specialist</div>
+    <div style="font-family:'Space Mono';font-size:.65rem;color:var(--muted);margin-top:.2rem">LMAR Marketing Real Estate · Peshawar, Pakistan</div>
+    <div style="font-family:'Space Mono';font-size:.62rem;color:var(--muted);margin-top:.15rem">linkedin.com/in/nasrat-abid · github.com/nasrat02abid-jpg</div>
+  </div>
+  <div style="text-align:right">
+    <div style="font-family:'Space Mono';font-size:.65rem;color:var(--muted)">May 13 – Jun 11, 2026 &nbsp;·&nbsp; 27 campaigns</div>
+    <div style="font-family:'Space Mono';font-size:.65rem;color:var(--muted);margin-top:.2rem">₨49,174.54 spend &nbsp;·&nbsp; 1,803,429 results &nbsp;·&nbsp; 1.99M reach</div>
+    <div style="font-family:'Space Mono';font-size:.62rem;color:var(--muted);margin-top:.15rem">Generated: June 2026</div>
+  </div>
+</div>
+
+</main>
+</body>
+</html>
